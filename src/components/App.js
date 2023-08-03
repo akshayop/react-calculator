@@ -1,8 +1,11 @@
+import Buttons from "./Buttons";
+import Display from "./Display";
+
 function App() {
   return (
     <div className="App">
-
-      hello
+      <Display/>
+      <Buttons/>
     </div>
   );
 }
