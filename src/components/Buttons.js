@@ -1,4 +1,4 @@
-const Buttons = ({clear, input, plusMinus, totalAns}) => {
+const Buttons = ({clear, inputHandler, plusMinus, totalAns}) => {
 
 
     return(
@@ -10,34 +10,34 @@ const Buttons = ({clear, input, plusMinus, totalAns}) => {
                         
                         <th onClick={clear}>C</th>
                         <th onClick={plusMinus}> +/-</th>
-                        <th onClick={input}> % </th>
-                        <th onClick={input}> / </th>
+                        <th onClick={inputHandler}> % </th>
+                        <th onClick={inputHandler}> / </th>
                     </tr>
 
                     <tr>
-                        <th onClick={input}> 7 </th>
-                        <th onClick={input}> 8 </th>
-                        <th onClick={input}> 9 </th>
-                        <th onClick={input}> * </th>
+                        <th onClick={inputHandler}> 7 </th>
+                        <th onClick={inputHandler}> 8 </th>
+                        <th onClick={inputHandler}> 9 </th>
+                        <th onClick={inputHandler}> * </th>
                     </tr>
 
                     <tr>
-                        <th onClick={input}> 4 </th>
-                        <th onClick={input}> 5 </th>
-                        <th onClick={input}> 6 </th>
-                        <th onClick={input}> - </th>
+                        <th onClick={inputHandler}> 4 </th>
+                        <th onClick={inputHandler}> 5 </th>
+                        <th onClick={inputHandler}> 6 </th>
+                        <th onClick={inputHandler}> - </th>
                     </tr>
 
                     <tr>
-                        <th onClick={input}> 1 </th>
-                        <th onClick={input}> 2 </th>
-                        <th onClick={input}> 3 </th>
-                        <th rowSpan={2} onClick={input}> + </th>
+                        <th onClick={inputHandler}> 1 </th>
+                        <th onClick={inputHandler}> 2 </th>
+                        <th onClick={inputHandler}> 3 </th>
+                        <th rowSpan={2} onClick={inputHandler}> + </th>
                     </tr>
 
                     <tr>
-                        <th onClick={input}> . </th>
-                        <th onClick={input}> 0 </th>
+                        <th onClick={inputHandler}> . </th>
+                        <th onClick={inputHandler}> 0 </th>
                         <th onClick={totalAns}> = </th>
                     </tr>
                 </tbody>

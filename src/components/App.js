@@ -2,22 +2,40 @@
 import { useState } from "react";
 import Buttons from "./Buttons";
 import Display from "./Display";
+import { evaluate, round } from "mathjs";
 
 function App() {
 
-  const [inputText, setInputText] = useState("");
+  const [input, setInput] = useState("");
   const [answer, setAnswer] = useState("");
 
   // Handling the numbers and symbols
-  const input = () => {
+  const inputHandler = (e) => {
     
-    console.log("input");
     
+    if(answer === "Invalid Input!!") {
+      return;
+    }
+    
+    let val = e.target.innerText;
+    let str = input + val;
+
+    if(str.length > 14) {
+      return;
+    }
+
+    if(answer !== "") {
+      setInput(answer + val);
+      setAnswer("");
+    } else {
+      setInput(str);
+    }
+
 
   }
 
   const clear = () => {
-    setInputText("");
+    setInput("");
     setAnswer("");
   }
 
@@ -26,13 +44,21 @@ function App() {
   }
 
   const totalAns = () => {
-    console.log("totalAnswer");
+    if(input === "") {
+      return;
+    }
+
+    let result = 0;
+    let finalAns = input;
+
+    result = evaluate(finalAns);
+    isNaN(result) ? setAnswer(result) : setAnswer(round(result, 3));
   }
 
   return (
     <div className="App">
-      <Display inputText={inputText} setInputText={setInputText} answer={answer}/>
-      <Buttons input={input} clear={clear} plusMinus={plusMinus}  totalAns={totalAns}/>
+      <Display input={input} setInput={setInput} answer={answer}/>
+      <Buttons inputHandler={inputHandler} clear={clear} plusMinus={plusMinus}  totalAns={totalAns}/>
     </div>
   );
 }
