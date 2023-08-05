@@ -40,7 +40,33 @@ function App() {
   }
 
   const plusMinus = () => {
-    console.log("plusMinus");
+    if (answer === "Invalid Input!!") return;
+    else if (answer !== "") {
+      let ans = answer.toString();
+      if (ans.charAt(0) === "-") {
+        let plus = "+";
+        setInput(plus.concat(ans.slice(1, ans.length)));
+      } else if (ans.charAt(0) === "+") {
+        let minus = "-";
+        setInput(minus.concat(ans.slice(1, ans.length)));
+      } else {
+        let minus = "-";
+        setInput(minus.concat(ans));
+      }
+      setAnswer("");
+    } else {
+      if (input.charAt(0) === "-") {
+        let plus = "+";
+        setInput((prev) => plus.concat(prev.slice(1, prev.length)));
+      } else if (input.charAt(0) === "+") {
+        let minus = "-";
+        setInput((prev) => minus.concat(prev.slice(1, prev.length)));
+      } else {
+        let minus = "-";
+        setInput((prev) => minus.concat(prev));
+      }
+    }
+
   }
 
   const totalAns = () => {

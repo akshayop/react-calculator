@@ -24,21 +24,13 @@ const Display = ({input, setInput, answer }) => {
                 />
                     
             ) : (
-                <>
-                    <input 
-                        type="text"
-                        value={input}
-                        placeholder="0"
-                        maxLength={12}
-                        disabled
-                    />
 
-                    <input 
-                        type="text"
-                        value={answer}
-                        disabled
-                    />
-                </>
+                <input 
+                    type="text"
+                    value={answer}
+                    disabled
+                />
+                
             )}
         </div>
     )
