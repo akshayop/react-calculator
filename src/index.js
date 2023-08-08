@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import App from './components/App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,8 +19,9 @@ root.render(
         draggable
         pauseOnHover
         theme="light"
-      />
-    <App />
+    />
+      <App />
+   
   </React.StrictMode>
 );
 

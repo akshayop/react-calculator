@@ -4,6 +4,7 @@ import Buttons from "./Buttons";
 import Display from "./Display";
 import { evaluate, round } from "mathjs";
 import styles from "../styles/app.module.css"
+import { toast } from "react-toastify";
 
 function App() {
 
@@ -78,7 +79,11 @@ function App() {
     let result = 0;
     let finalAns = input;
 
-    result = evaluate(finalAns);
+    try {
+      result = evaluate(finalAns);
+    } catch(error) {
+      toast.error("Invalid Input!......")
+    }
     isNaN(result) ? setAnswer(result) : setAnswer(round(result, 3));
   }
 
