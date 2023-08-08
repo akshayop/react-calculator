@@ -1,3 +1,5 @@
+import styles from "../styles/app.module.css"
+
 const Display = ({input, setInput, answer }) => {
 
     const onchangeInput = (e) => {
@@ -16,6 +18,7 @@ const Display = ({input, setInput, answer }) => {
             {answer === "" ? (
                 <input 
                     type="text"
+                    className={styles.screen}
                     value={input}
                     placeholder="00"
                     maxLength={12}
@@ -26,6 +29,7 @@ const Display = ({input, setInput, answer }) => {
             ) : (
 
                 <input 
+                    className={styles.screen}   
                     type="text"
                     value={answer}
                     disabled

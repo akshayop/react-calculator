@@ -3,6 +3,7 @@ import { useState } from "react";
 import Buttons from "./Buttons";
 import Display from "./Display";
 import { evaluate, round } from "mathjs";
+import styles from "../styles/app.module.css"
 
 function App() {
 
@@ -82,7 +83,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={styles.app}>
       <Display input={input} setInput={setInput} answer={answer}/>
       <Buttons inputHandler={inputHandler} clear={clear} plusMinus={plusMinus}  totalAns={totalAns}/>
     </div>

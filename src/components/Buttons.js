@@ -1,44 +1,44 @@
+import styles from "../styles/app.module.css"
+
 const Buttons = ({clear, inputHandler, plusMinus, totalAns}) => {
-
-
     return(
-        <div> 
+        <div className={styles.button}> 
             <table>
 
                 <tbody>
                     <tr>
                         
-                        <th onClick={clear}>C</th>
-                        <th onClick={plusMinus}> +/-</th>
-                        <th onClick={inputHandler}> % </th>
-                        <th onClick={inputHandler}> / </th>
+                        <th className={styles.symbol} onClick={clear}>C</th>
+                        <th className={styles.symbol} onClick={plusMinus}> +/-</th>
+                        <th className={styles.symbol} onClick={inputHandler}> % </th>
+                        <th className={styles.symbol} onClick={inputHandler}> / </th>
                     </tr>
 
                     <tr>
-                        <th onClick={inputHandler}> 7 </th>
-                        <th onClick={inputHandler}> 8 </th>
-                        <th onClick={inputHandler}> 9 </th>
-                        <th onClick={inputHandler}> * </th>
+                        <th className={styles.number} onClick={inputHandler}> 7 </th>
+                        <th className={styles.number} onClick={inputHandler}> 8 </th>
+                        <th className={styles.number} onClick={inputHandler}> 9 </th>
+                        <th className={styles.symbol} onClick={inputHandler}> * </th>
                     </tr>
 
                     <tr>
-                        <th onClick={inputHandler}> 4 </th>
-                        <th onClick={inputHandler}> 5 </th>
-                        <th onClick={inputHandler}> 6 </th>
-                        <th onClick={inputHandler}> - </th>
+                        <th className={styles.number} onClick={inputHandler}> 4 </th>
+                        <th className={styles.number} onClick={inputHandler}> 5 </th>
+                        <th className={styles.number} onClick={inputHandler}> 6 </th>
+                        <th className={styles.symbol} onClick={inputHandler}> - </th>
                     </tr>
 
                     <tr>
-                        <th onClick={inputHandler}> 1 </th>
-                        <th onClick={inputHandler}> 2 </th>
-                        <th onClick={inputHandler}> 3 </th>
-                        <th rowSpan={2} onClick={inputHandler}> + </th>
+                        <th className={styles.number} onClick={inputHandler}> 1 </th>
+                        <th className={styles.number} onClick={inputHandler}> 2 </th>
+                        <th className={styles.number} onClick={inputHandler}> 3 </th>
+                        <th className={styles.symbol} rowSpan={2} onClick={inputHandler}> + </th>
                     </tr>
 
                     <tr>
-                        <th onClick={inputHandler}> . </th>
-                        <th onClick={inputHandler}> 0 </th>
-                        <th onClick={totalAns}> = </th>
+                        <th className={styles.symbol} onClick={inputHandler}> . </th>
+                        <th className={styles.number} onClick={inputHandler}> 0 </th>
+                        <th className={styles.symbol} onClick={totalAns}> = </th>
                     </tr>
                 </tbody>
             </table>
